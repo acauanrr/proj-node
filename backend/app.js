@@ -15,7 +15,7 @@ app.use("/", routes);
 
 // Conexão com Banco de Dados
 sequelize.sync().then(() => {
-  console.log("Conectado ao Banco de Dados com sucesso!");
+	console.log("Conectado ao Banco de Dados com sucesso!");
 });
 
-app.listen(PORT, () => console.log("Servidor rodando na porta " + PORT));
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
