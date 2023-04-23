@@ -8,10 +8,10 @@ export class CursoController {
 		return cursos;
 	}
 
-	async get(cursoDTO) {
+	async get(cursoId) {
 		const cursos = await this.curso.findAll({
 			where: {
-				id: cursoDTO.id,
+				id: cursoId,
 			},
 		});
 		return cursos;
@@ -26,12 +26,12 @@ export class CursoController {
 		}
 	}
 
-	async update(cursoDTO, newCursoDTO) {
+	async update(cursoId, newCursoDTO) {
 		try {
-			console.log(cursoDTO);
+			console.log(cursoId);
 			await this.curso.update(newCursoDTO, {
 				where: {
-					id: cursoDTO.id,
+					id: cursoId,
 				},
 			});
 		} catch (error) {
@@ -39,12 +39,12 @@ export class CursoController {
 		}
 	}
 
-	async delete(cursoDTO) {
+	async delete(cursoId) {
 		try {
-			console.log(cursoDTO);
+			console.log(cursoId);
 			await this.curso.destroy({
 				where: {
-					id: cursoDTO.id,
+					id: cursoId,
 				},
 			});
 		} catch (error) {
